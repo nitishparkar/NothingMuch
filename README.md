@@ -35,6 +35,10 @@ The NothingMuch Extension is now installed and ready to use.
 
 This project is licensed under the [MIT License](LICENSE).
 
+## Attributions
+
+<a href="https://www.flaticon.com/free-icons/artificial-intelligence" title="artificial intelligence icons">Artificial intelligence icons created by Freepik - Flaticon</a>
+
 ## Disclaimer
 
 This extension is developed and maintained independently and is not officially affiliated with or endorsed by WhatsApp or OpenAI.
