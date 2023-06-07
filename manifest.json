@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "NothingMuch",
+  "version": "1.0",
+  "description": "Provides suggestions for WhatsApp responses using OpenAI.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "https://web.whatsapp.com/*"
+  ],
+  "background": {},
+  "options_page": "options.html",
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
