@@ -19,7 +19,6 @@ Assuming you have the `.crx` file,
 
 The NothingMuch Extension is now installed and ready to use.
 
-> Note: The extension is packed in a `.crx` file, which is the installation package for Chrome extensions.
 > Note: The OpenAI key is required to connect with the OpenAI API and generate responses.
 
 ## Usage
