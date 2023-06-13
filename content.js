@@ -43,9 +43,9 @@ function createSuggestButton() {
 
     var messages = outs.map(content => ({ role: 'user', content: content }));
     messages.unshift({ role: 'system', content: 'You are a helpful assistant. Your job is to look at the message exchange provided below and generate an appropriate response for "Me"'})
-    console.log('Messages:')
-    console.log(messages)
-    console.log('----------')
+    // console.log('Messages:')
+    // console.log(messages)
+    // console.log('----------')
 
     fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
@@ -63,9 +63,9 @@ function createSuggestButton() {
       .then((data) => {
         if (data && data.choices && data.choices.length > 0) {
           const responseMessage = data.choices[0].message.content.trim();
-          console.log('OpenAI Response:')
-          console.log(responseMessage)
-          console.log('----------')
+          // console.log('OpenAI Response:')
+          // console.log(responseMessage)
+          // console.log('----------')
 
           // https://gist.github.com/kevinresol/f5253d148d5a37201b3e53f2b4fa70b2
           var ip = document.querySelector('#main [data-testid="conversation-compose-box-input"] p');
