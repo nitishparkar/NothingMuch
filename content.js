@@ -7,6 +7,23 @@ function documentLoadedListener() {
   ele.addEventListener("click", function () {
     createSuggestButton();
     createEnhanceButton();
+
+    var el = document.querySelector('#main [data-testid="conversation-compose-box-input"]');
+    const suggest = document.getElementById('nm-suggest');
+    const enhance = document.getElementById('nm-enhance');
+    el.addEventListener('keyup', () => {
+      if (el.innerText.trim().length === 0) {
+        if (suggest.style.display === 'none') {
+          suggest.style.display = 'block';
+          enhance.style.display = 'none';
+        }
+      } else {
+        if (enhance.style.display === 'none') {
+          enhance.style.display = 'block';
+          suggest.style.display = 'none';
+        }
+      }
+    });
   });
 
   chrome.storage.local.get('openaiKey', function (data) {
@@ -19,6 +36,7 @@ function createSuggestButton() {
   if (!inputField) return;
 
   const button = document.createElement('button');
+  button.id = 'nm-suggest'
   button.innerText = 'Suggest';
 
   // Add the desired CSS properties to the button
@@ -91,15 +109,17 @@ function createEnhanceButton() {
   if (!inputField) return;
 
   const button = document.createElement('button');
+  button.id = 'nm-enhance'
   button.innerText = 'Enhance';
 
   // Add the desired CSS properties to the button
   button.style.position = 'absolute';
   button.style.top = '0px';
-  button.style.right = '50px';
-  button.style.backgroundColor = 'gray';
+  button.style.right = '0px';
+  button.style.backgroundColor = 'white';
   button.style.padding = '2px';
   button.style.borderRadius = '2px';
+  button.style.display = 'none';
 
   button.addEventListener('click', () => {
     var outs = []
