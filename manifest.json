@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "Provides suggestions for WhatsApp responses using OpenAI.",
   "permissions": [
-    "tabs",
     "storage",
     "https://web.whatsapp.com/*"
   ],
