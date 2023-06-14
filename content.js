@@ -61,8 +61,10 @@ function createSuggestButton() {
       }
     }
 
+    var systemPrompt = `Given the message exchange provided below, your task is to generate an appropriate response to the message from 'Me:'. Each message in the exchange begins with the name of the sender, followed by a colon (':'), and then the actual message.
+Please consider the context of the conversation and generate a response that is relevant and coherent. Your response should only include the text of the message, without adding 'Me:' at the beginning.`
     var messages = outs.map(content => ({ role: 'user', content: content }));
-    messages.unshift({ role: 'system', content: 'You are a helpful assistant. Your job is to look at the message exchange provided below and generate an appropriate response for "Me"' })
+    messages.unshift({ role: 'system', content: systemPrompt })
     // console.log('Messages:')
     // console.log(messages)
     // console.log('----------')
@@ -144,17 +146,15 @@ function createEnhanceButton() {
       }
     }
 
-    var messages = outs.map(content => ({ role: 'user', content: content }));
+    var messages = []//outs.map(content => ({ role: 'user', content: content }));
 
     var userWrittenReply = document.querySelector('#main [data-testid="conversation-compose-box-input"]').innerText;
-    var systemPrompt = `You are a helpful assistant. Your job is to look at the message exchange provided below and generate an appropriate response on behalf of the user, "Me".
-    The user has already written a response or provided a few keywords/suggestions as follows:
-    ${userWrittenReply}
-
-    Please use those to generate the response. Return only response. Do not include any additional commentary. Do not ask any follow up questions or more information.
-    `
-    console.log(systemPrompt);
-
+    var systemPrompt = `Please proofread and improve the user's message delimited by ---. Your task is to make the message sound simple and coherent. Correct any grammatical mistakes if present.
+---
+${userWrittenReply}
+---
+Focus on enhancing clarity, coherence, and grammar while refining the user's response.`
+// Preceding message exchange is provided below only for the context. Each message in the exchange starts with the sender's name, followed by a colon (':'), and then the message content. Do not try to proofread or improve these messages.`
     messages.unshift({ role: 'system', content: systemPrompt })
     // console.log('Messages:')
     // console.log(messages)
