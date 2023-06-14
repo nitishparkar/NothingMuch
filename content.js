@@ -48,6 +48,9 @@ function createSuggestButton() {
   button.style.borderRadius = '2px';
 
   button.addEventListener('click', () => {
+    button.innerText = 'Talking to AI...';
+    button.disabled = true;
+
     var outs = []
     var rows = document.querySelectorAll('[role="application"] [role="row"]');
     for (row of rows) {
@@ -59,7 +62,7 @@ function createSuggestButton() {
     }
 
     var messages = outs.map(content => ({ role: 'user', content: content }));
-    messages.unshift({ role: 'system', content: 'You are a helpful assistant. Your job is to look at the message exchange provided below and generate an appropriate response for "Me"'})
+    messages.unshift({ role: 'system', content: 'You are a helpful assistant. Your job is to look at the message exchange provided below and generate an appropriate response for "Me"' })
     // console.log('Messages:')
     // console.log(messages)
     // console.log('----------')
@@ -76,6 +79,10 @@ function createSuggestButton() {
         "temperature": 0.5
       }),
     })
+      .finally(() => {
+        button.innerText = 'Suggest';
+        button.disabled = false;
+      })
       .then((res) => res.json())
       .then((data) => {
         if (data && data.choices && data.choices.length > 0) {
@@ -85,7 +92,7 @@ function createSuggestButton() {
           // console.log('----------')
 
           // https://gist.github.com/kevinresol/f5253d148d5a37201b3e53f2b4fa70b2
-          var ip = document.querySelector('#main [data-testid="conversation-compose-box-input"] p');
+          var ip = document.querySelector('#main [data-testid="conversation-compose-box-input"]');
           ip.dispatchEvent(new InputEvent('input', {
             inputType: 'insertText',
             data: responseMessage,
@@ -94,6 +101,8 @@ function createSuggestButton() {
             composed: true,
             detail: 0,
           }));
+          // To hide suggest and show enhance
+          setTimeout(() => ip.dispatchEvent(new KeyboardEvent('keyup', { })), 100);
         }
       })
       .catch((error) => {
@@ -122,6 +131,9 @@ function createEnhanceButton() {
   button.style.display = 'none';
 
   button.addEventListener('click', () => {
+    button.innerText = 'Talking to AI...';
+    button.disabled = true;
+
     var outs = []
     var rows = document.querySelectorAll('[role="application"] [role="row"]');
     for (row of rows) {
@@ -160,6 +172,10 @@ function createEnhanceButton() {
         "temperature": 0.5
       }),
     })
+      .finally(() => {
+        button.innerText = 'Enhance';
+        button.disabled = false;
+      })
       .then((res) => res.json())
       .then((data) => {
         if (data && data.choices && data.choices.length > 0) {
