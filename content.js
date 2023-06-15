@@ -96,6 +96,8 @@ Please consider the context of the conversation and generate a response that is 
 
           // To hide suggest and show enhance
           setTimeout(() => ip.dispatchEvent(new KeyboardEvent('keyup', { })), 100);
+        } else {
+          throw new Error('OpenAI API error');
         }
       })
       .catch((error) => {
@@ -151,6 +153,8 @@ Focus on enhancing clarity, coherence, and grammar while refining the user's res
           el.focus();
           document.execCommand("selectall");
           el.dispatchEvent(evt);
+        } else {
+          throw new Error('OpenAI API error');
         }
       })
       .catch((error) => {
