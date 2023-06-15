@@ -188,7 +188,7 @@ Focus on enhancing clarity, coherence, and grammar while refining the user's res
 
           // https://stackoverflow.com/a/73029608
           const dataTransfer = new DataTransfer();
-          dataTransfer.setData('text', responseMessage);
+          dataTransfer.setData('text', userWrittenReply + '\n' + responseMessage);
           const evt = new ClipboardEvent('paste', {
             clipboardData: dataTransfer,
             bubbles: true
