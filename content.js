@@ -47,10 +47,13 @@ function createSuggestButton() {
   button.style.padding = '4px 5px';
   button.style.borderRadius = '9px';
   button.style.border = '1px solid #8696a0';
+  button.style.cursor = 'pointer';
 
   button.addEventListener('click', () => {
-    button.innerText = 'Talking to AI...';
     button.disabled = true;
+    button.innerText = 'Talking to AI...';
+    button.style.border = 'none';
+    button.style.cursor = 'wait';
 
     var outs = []
     var rows = document.querySelectorAll('[role="application"] [role="row"]');
@@ -83,8 +86,10 @@ Please consider the context of the conversation and generate a response that is 
       }),
     })
       .finally(() => {
-        button.innerText = 'Suggest';
         button.disabled = false;
+        button.innerText = 'Suggest';
+        button.style.border = '1px solid #8696a0';
+        button.style.cursor = 'pointer';
       })
       .then((res) => res.json())
       .then((data) => {
@@ -133,10 +138,13 @@ function createEnhanceButton() {
   button.style.borderRadius = '9px';
   button.style.border = '1px solid #8696a0';
   button.style.display = 'none';
+  button.style.cursor = 'pointer';
 
   button.addEventListener('click', () => {
-    button.innerText = 'Talking to AI...';
     button.disabled = true;
+    button.innerText = 'Talking to AI...';
+    button.style.border = 'none';
+    button.style.cursor = 'wait';
 
     var outs = []
     var rows = document.querySelectorAll('[role="application"] [role="row"]');
@@ -175,8 +183,10 @@ Focus on enhancing clarity, coherence, and grammar while refining the user's res
       }),
     })
       .finally(() => {
-        button.innerText = 'Enhance';
         button.disabled = false;
+        button.innerText = 'Enhance';
+        button.style.border = '1px solid #8696a0';
+        button.style.cursor = 'pointer';
       })
       .then((res) => res.json())
       .then((data) => {
