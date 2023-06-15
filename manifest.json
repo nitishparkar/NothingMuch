@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "NothingMuch",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Provides suggestions for WhatsApp responses using OpenAI.",
   "permissions": [
     "storage"
