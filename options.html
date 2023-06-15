@@ -1,38 +1,42 @@
-<!-- options.html -->
-
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title>NothingMuch Options</title>
+  <title>NothingMuch Settings</title>
   <style>
     body {
-      width: 300px;
+      width: 500px;
       margin: 20px;
     }
 
-    h1 {
-      font-size: 16px;
-      margin-bottom: 10px;
+    p {
+      margin-top: 5px
     }
 
     input[type="text"] {
       width: 100%;
-      margin-bottom: 10px;
+      margin-top: 5px;
     }
 
     button {
-      margin-top: 10px;
+      margin-top: 6px;
+      padding: 7px 22px;
+      border-radius: 9px;
+      border: 1px solid lightgray;
+      cursor: pointer;
     }
   </style>
 </head>
 
 <body>
-  <h1>Extension Options</h1>
-  <label for="openaiKey">OpenAI API Key:</label>
-  <input type="text" id="openaiKey" placeholder="Enter your OpenAI key">
+  <h1>Settings</h1>
+  <label for="openai-key">OpenAI API Key [<a target="_blank"
+      href="https://www.howtogeek.com/885918/how-to-get-an-openai-api-key/">?</a>]:</label>
+  <input type="text" id="openai-key" placeholder="Enter your OpenAI key">
+  <p>Disclaimer: Your OpenAI API Key is securely stored within your browser and is exclusively used for making requests to
+    OpenAI APIs. We do not share your API Key with anyone else.</p>
 
-  <button id="saveButton">Save</button>
+  <button id="save-btn">Save</button>
 
   <script src="options.js"></script>
 </body>

@@ -1,8 +1,6 @@
-// options.js
-
 document.addEventListener('DOMContentLoaded', () => {
-  const openaiKeyInput = document.getElementById('openaiKey');
-  const saveButton = document.getElementById('saveButton');
+  const openaiKeyInput = document.getElementById('openai-key');
+  const saveButton = document.getElementById('save-btn');
 
   // Load the saved OpenAI key
   chrome.storage.local.get('openaiKey', (data) => {
