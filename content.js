@@ -43,9 +43,10 @@ function createSuggestButton() {
   button.style.position = 'absolute';
   button.style.top = '0px';
   button.style.right = '0px';
-  button.style.backgroundColor = 'white';
-  button.style.padding = '2px';
-  button.style.borderRadius = '2px';
+  button.style.color = '#25D366';
+  button.style.padding = '4px 5px';
+  button.style.borderRadius = '9px';
+  button.style.border = '1px solid #8696a0';
 
   button.addEventListener('click', () => {
     button.innerText = 'Talking to AI...';
@@ -127,9 +128,10 @@ function createEnhanceButton() {
   button.style.position = 'absolute';
   button.style.top = '0px';
   button.style.right = '0px';
-  button.style.backgroundColor = 'white';
-  button.style.padding = '2px';
-  button.style.borderRadius = '2px';
+  button.style.color = '#25D366';
+  button.style.padding = '4px 5px';
+  button.style.borderRadius = '9px';
+  button.style.border = '1px solid #8696a0';
   button.style.display = 'none';
 
   button.addEventListener('click', () => {
