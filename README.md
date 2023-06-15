@@ -1,16 +1,16 @@
 # NothingMuch
 
-The NothingMuch Extension is a Chrome extension that enhances the functionality of WhatsApp Web. It provides a "Suggest a response" button within the input field of the currently open chat, allowing users to generate AI-powered responses for their conversations using OpenAI.
+The NothingMuch Extension is a Chrome extension that enhances the functionality of WhatsApp Web. It provides a "Suggest" button within the input field of the currently open chat, allowing users to generate AI-powered responses for their conversations using OpenAI. Additionally, it includes an "Enhance" button that refines and improves user-written replies, ensuring coherence and correcting grammatical errors.
 
 ## Features
 
-- Adds a "Suggest a response" button in the input field of WhatsApp Web.
-- Reads loaded messages in the chat, sends them to OpenAI API, and populates the input field with the AI-generated response.
+- Adds a "Suggest" button in the input field of WhatsApp Web. It reads loaded messages in the chat, sends them to OpenAI API, and populates the input field with the AI-generated response.
+- Adds an "Enhance" button in the input field of WhatsApp Web. It refines and improves user-written replies.
 - Allows users to configure their OpenAI key in the extension settings.
 
 ## Installation
 
-Assuming you have the `.crx` file,
+1. Get the latest `.crx` file from [releases](https://github.com/nitishparkar/NothingMuch/releases).
 1. Open Google Chrome and go to `chrome://extensions`.
 2. Enable the "Developer mode" toggle in the top right corner.
 3. Drag and drop the extracted `.crx` file onto the Chrome extensions page.
@@ -25,9 +25,10 @@ The NothingMuch Extension is now installed and ready to use.
 
 1. Open WhatsApp Web in a new tab by visiting [https://web.whatsapp.com/](https://web.whatsapp.com/).
 2. Navigate to the chat you want to interact with.
-3. In the chat's input field, you will find a "Suggest a response" button.
-4. Click the "Suggest response" button to generate an AI-powered response based on the loaded messages in the chat.
+3. In the chat's input field, you will find a "Suggest" button.
+4. Click the "Suggest" button to generate an AI-powered response based on the loaded messages in the chat.
 5. Review and send the response as desired.
+6. To refine your own reply, type your message and click the "Enhance" button.
 
 
 ## License
