@@ -3,6 +3,8 @@ const SELECTOR_INPUT_BOX = '#main [data-testid="conversation-compose-box-input"]
 const SELECTOR_CHAT_ROW = '[role="application"] [role="row"]';
 const SUGGEST_BUTTON_ID = 'nm-suggest';
 const ENHANCE_BUTTON_ID = 'nm-enhance';
+const SUGGEST_BUTTON_TEXT = 'Suggest';
+const ENHANCE_BUTTON_TEXT = 'Enhance';
 
 let OPENAI_KEY = '';
 
@@ -164,7 +166,7 @@ Focus on enhancing clarity, coherence, and grammar while refining the user's res
 function createActionButton(id) {
   const button = document.createElement('button');
   button.id = id;
-  button.innerText = (id === SUGGEST_BUTTON_ID) ? 'Suggest' : 'Enhance';
+  button.innerText = (id === SUGGEST_BUTTON_ID) ? SUGGEST_BUTTON_TEXT : ENHANCE_BUTTON_TEXT;
 
   button.style.position = 'absolute';
   button.style.top = '0px';
@@ -188,7 +190,7 @@ function disableButtonForProcessing(button) {
 
 function enableButtonAfterProcessing(button) {
   button.disabled = false;
-  button.innerText = 'Suggest';
+  button.innerText = (button.id === SUGGEST_BUTTON_ID) ? SUGGEST_BUTTON_TEXT : ENHANCE_BUTTON_TEXT;
   button.style.border = '1px solid #8696a0';
   button.style.cursor = 'pointer';
 }
